@@ -2,5 +2,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('django/', views.index),
+    path('', views.index),
+    path('<str:name>/', views.greet),
 ]
