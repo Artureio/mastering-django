@@ -1,0 +1,16 @@
+{% extends 'hello/base.html' %}
+{% load static %}
+
+{% block title %}Hello, Django{% endblock %}
+
+{% block body %}
+
+<link rel="stylesheet" type="text/css" href="{% static '/hello/css/hello.css' %}">
+<h1>Enter your name</h1>
+<form method="POST" action="{% url 'hello:ask' %}">
+    {% csrf_token %}
+    {{form}}
+    <button type="submit">Say Hello</button>
+</form>
+
+{% endblock %}
