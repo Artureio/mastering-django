@@ -10,7 +10,7 @@
 <form method="POST" action="{% url 'hello:ask' %}">
     {% csrf_token %}
     {{form}}
-    <button type="submit">Say Hello</button>
+    <div class="btn-div"><button type="submit">Say Hello</button></div>
 </form>
 
 {% endblock %}

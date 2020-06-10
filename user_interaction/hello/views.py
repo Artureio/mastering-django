@@ -12,3 +12,11 @@ def askName(request):
             name = form.cleaned_data['name']
             return redirect('hello:greet', name=name)
     return render(request, 'hello/ask.html', {'form':NameForm})
+
+
+def tasks(request):
+    task = ''
+    if request.method == 'POST':
+        task = request.POST['task'].capitalize()
+        print(task)
+    return render(request, 'hello/tasks.html', {'task': task})

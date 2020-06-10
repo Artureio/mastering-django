@@ -1,0 +1,18 @@
+{% extends 'hello/base.html' %}
+{% load static %}
+
+{% block title %}Tasks Pile{% endblock %}
+
+{% block body %}
+
+<link rel="stylesheet" type="text/css" href="{% static '/hello/css/hello.css' %}">
+<h1>Tasks Pile</h1>
+<form method="POST" action="{% url 'tasks' %}">
+    {% csrf_token %}
+    <input type="text" autofocus name="task" placeholder="Add a Task">
+    <div class="btn-div"><button type="submit">Add Task</button></div>
+</form>
+
+<h3>{{task}}</h3>
+
+{% endblock %}
